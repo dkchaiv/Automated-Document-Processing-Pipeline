@@ -10,6 +10,8 @@ import os
 import re
 from datetime import datetime
 import time
+import threading
+import requests
 
 # ---------------------------------------------------------------------------
 # Try to import OCR libraries — gracefully handle missing dependencies
@@ -48,6 +50,22 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
+
+# ---------------------------------------------------------------------------
+# Keep-Alive Logic
+# ---------------------------------------------------------------------------
+def keep_alive():
+    while True:
+        time.sleep(14 * 60)  # every 14 minutes
+        try:
+            requests.get("https://automated-document-processing-pipeline.onrender.com/health")
+            print("Keep-alive ping sent")
+        except:
+            pass
+
+# Start keep-alive thread when app launches
+thread = threading.Thread(target=keep_alive, daemon=True)
+thread.start()
 
 
 # ---------------------------------------------------------------------------
