@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Processing Pipeline — Extract Data from PDFs &amp; Images</title>
+    <meta name="description" content="Upload invoices, forms, and receipts. Automatically extract Name, Amount, Date, and ID using OCR. Free, fast, and accurate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PRESENTATION SECTION
+         ══════════════════════════════════════════════════════════ -->
+    <div class="ppt-wrapper" id="pptWrapper">
+        <div class="ppt-header">
+            <h2>🎓 Project Presentation</h2>
+            <div class="ppt-controls-top">
+                <button class="ppt-btn-icon" id="toggleFullscreen" title="Toggle Fullscreen" aria-label="Toggle fullscreen">⛶</button>
+                <button class="ppt-btn-icon" id="minimizePpt" title="Minimize Presentation" aria-label="Minimize presentation">−</button>
+            </div>
+        </div>
+
+        <div class="ppt-stage" id="pptStage">
+            <div class="ppt-slides" id="pptSlides">
+
+                <!-- Slide 1: Title -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">📄</span>
+                    <div class="slide-subtitle">Final Year Project Presentation</div>
+                    <div class="slide-title">Automated Document<br>Processing Pipeline</div>
+                    <div class="slide-body">
+                        An intelligent OCR-powered system that extracts structured data<br>from invoices, forms &amp; receipts automatically.
+                    </div>
+                    <div class="dev-card" style="margin-top:24px">
+                        <div class="dev-name">V. Chaitanya</div>
+                        <div class="dev-id">22331A4764</div>
+                        <div class="dev-dept">CIC — MVGR College of Engineering</div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Problem Statement -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">🔍</span>
+                    <div class="slide-subtitle">The Challenge</div>
+                    <div class="slide-title">Problem Statement</div>
+                    <div class="slide-body">
+                        Organizations process <strong>thousands</strong> of documents daily — invoices, receipts, forms. 
+                        Manual data entry is <strong>slow, error-prone, and expensive</strong>.<br><br>
+                        ⏱ <strong>High processing time</strong> — manual extraction takes 2–5 min per document<br>
+                        ❌ <strong>Human errors</strong> — misread values, typos, skipped fields<br>
+                        💰 <strong>Rising costs</strong> — labor-intensive workflow doesn't scale<br>
+                        📊 <strong>No real-time insights</strong> — data stays locked in paper/PDF
+                    </div>
+                </div>
+
+                <!-- Slide 3: Solution -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">💡</span>
+                    <div class="slide-subtitle">Our Approach</div>
+                    <div class="slide-title">Proposed Solution</div>
+                    <div class="slide-body">
+                        An <strong>end-to-end automated pipeline</strong> that converts any document (PDF or image) 
+                        into <strong>structured JSON</strong> using OCR and intelligent parsing.<br><br>
+                        ✅ Upload any document — PDF, JPG, PNG<br>
+                        ✅ Automatic text extraction via <strong>Tesseract OCR</strong><br>
+                        ✅ Smart field parsing with <strong>regex-based NLP</strong><br>
+                        ✅ Validation &amp; confidence scoring for every field<br>
+                        ✅ Instant downloadable <strong>JSON output</strong>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Technologies Used -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">🛠️</span>
+                    <div class="slide-subtitle">Tech Stack</div>
+                    <div class="slide-title">Technologies Used</div>
+                    <div class="slide-tags">
+                        <span class="slide-tag"><span class="tag-icon">🐍</span> Python 3</span>
+                        <span class="slide-tag"><span class="tag-icon">🌐</span> Flask</span>
+                        <span class="slide-tag"><span class="tag-icon">👁️</span> Tesseract OCR</span>
+                        <span class="slide-tag"><span class="tag-icon">🖼️</span> Pillow (PIL)</span>
+                        <span class="slide-tag"><span class="tag-icon">📄</span> pdf2image</span>
+                        <span class="slide-tag"><span class="tag-icon">🔤</span> Regex / NLP</span>
+                        <span class="slide-tag"><span class="tag-icon">🎨</span> HTML / CSS / JS</span>
+                        <span class="slide-tag"><span class="tag-icon">📦</span> REST API</span>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Architecture -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">🏗️</span>
+                    <div class="slide-subtitle">System Design</div>
+                    <div class="slide-title">Architecture</div>
+                    <div class="arch-flow">
+                        <span class="arch-step">📤 Upload</span>
+                        <span class="arch-arrow">→</span>
+                        <span class="arch-step">📄 Convert</span>
+                        <span class="arch-arrow">→</span>
+                        <span class="arch-step">👁️ OCR</span>
+                        <span class="arch-arrow">→</span>
+                        <span class="arch-step">🔍 Parse</span>
+                        <span class="arch-arrow">→</span>
+                        <span class="arch-step">✅ Validate</span>
+                        <span class="arch-arrow">→</span>
+                        <span class="arch-step">📊 JSON</span>
+                    </div>
+                    <div class="slide-body" style="margin-top:20px">
+                        The pipeline follows a <strong>clean, modular architecture</strong>.<br>
+                        Each step is isolated and optimized for speed and reliability.<br>
+                        Flask serves as the lightweight HTTP backend while Tesseract handles OCR.
+                    </div>
+                </div>
+
+                <!-- Slide 6: Key Features -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">✨</span>
+                    <div class="slide-subtitle">What Makes It Special</div>
+                    <div class="slide-title">Key Features</div>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="fc-icon">📁</div>
+                            <div class="fc-title">Multi-Format Support</div>
+                            <div class="fc-desc">PDF, JPG, JPEG, PNG up to 10 MB</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="fc-icon">🖱️</div>
+                            <div class="fc-title">Drag &amp; Drop</div>
+                            <div class="fc-desc">Intuitive file upload experience</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="fc-icon">⚡</div>
+                            <div class="fc-title">Real-Time Results</div>
+                            <div class="fc-desc">Instant OCR processing with live status</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="fc-icon">📥</div>
+                            <div class="fc-title">JSON Export</div>
+                            <div class="fc-desc">Download structured data instantly</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="fc-icon">🔒</div>
+                            <div class="fc-title">Validation</div>
+                            <div class="fc-desc">Confidence badges for every field</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="fc-icon">📱</div>
+                            <div class="fc-title">Responsive UI</div>
+                            <div class="fc-desc">Works beautifully on all devices</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Demo -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">🚀</span>
+                    <div class="slide-subtitle">See It In Action</div>
+                    <div class="slide-title">Live Demo</div>
+                    <div class="slide-body">
+                        Scroll down to try the <strong>Document Processing Pipeline</strong> live!<br><br>
+                        Upload any invoice, receipt, or form and watch the system<br>
+                        extract <strong>Name, Amount, Date, and Invoice ID</strong> automatically.
+                    </div>
+                    <button class="btn btn-primary" style="margin-top:24px" onclick="document.getElementById('uploadArea').scrollIntoView({behavior:'smooth'}); closePpt();">
+                        ↓ Try the Demo
+                    </button>
+                </div>
+
+                <!-- Slide 8: Developer Info -->
+                <div class="ppt-slide">
+                    <span class="slide-icon">👨‍💻</span>
+                    <div class="slide-subtitle">Developed By</div>
+                    <div class="slide-title">Project Developer</div>
+                    <div class="dev-card">
+                        <div class="dev-name">V. Chaitanya</div>
+                        <div class="dev-id">22331A4764</div>
+                        <div class="dev-dept">CIC — MVGR College of Engineering</div>
+                    </div>
+                    <div class="slide-body" style="margin-top:20px">
+                        Thank you for viewing this presentation!<br>
+                        <strong>Scroll down to try the live demo.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="ppt-nav" id="pptNav">
+            <button class="ppt-nav-btn" id="prevSlide" aria-label="Previous slide">◀</button>
+            <div class="ppt-dots" id="pptDots"></div>
+            <span class="ppt-counter" id="pptCounter">1 / 8</span>
+            <button class="ppt-nav-btn" id="nextSlide" aria-label="Next slide">▶</button>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         MAIN PROJECT DEMO
+         ══════════════════════════════════════════════════════════ -->
+    <div class="container" id="mainContainer">
+        <!-- Header -->
+        <div class="header">
+            <h1>📄 Document Processing Pipeline</h1>
+            <p>Upload invoices, forms &amp; receipts — extract structured data automatically</p>
+        </div>
+
+        <!-- Developer Credit -->
+        <div class="dev-credit">
+            <span>Developed by V. Chaitanya</span>
+            <span class="sep">|</span>
+            <span>22331A4764</span>
+            <span class="sep">|</span>
+            <span>CIC — MVGR College of Engineering</span>
+        </div>
+
+        <!-- Upload Form -->
+        <form id="uploadForm">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📤</div>
+                <p class="upload-text">Drag & drop your document here</p>
+                <p class="upload-sub">Supports PDF, JPG, JPEG, PNG — max 10 MB</p>
+                <p class="file-name" id="fileName"></p>
+                <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+
+            <div class="btn-row">
+                <button type="submit" class="btn btn-primary" id="submitBtn">Upload &amp; Process</button>
+                <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+            </div>
+        </form>
+
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Running OCR & extracting fields…</p>
+        </div>
+
+        <!-- Error -->
+        <div class="error-msg" id="errorMsg"></div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+            <h2>✅ Extraction Results</h2>
+            <p class="meta" id="metaInfo"></p>
+
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+
+            <p class="raw-toggle" id="rawToggle" onclick="toggleRaw()">▸ Show raw OCR text</p>
+            <pre class="raw-text" id="rawText"></pre>
+
+            <div class="download-row">
+                <button type="button" class="btn btn-success" onclick="downloadJSON()">
+                    ⬇ Download JSON
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            Powered by Tesseract OCR &bull; Flask &bull; Open Source
+            <div class="footer-dev">Built by V. Chaitanya — 22331A4764 — CIC, MVGR College of Engineering</div>
+        </div>
+    </div>
+
+    <script src="Scripts.js"></script>
+</body>
+</html>
