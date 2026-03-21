@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Processing Pipeline — Extract Data from PDFs &amp; Images</title>
-    <meta name="description" content="Upload invoices, forms, and receipts. Automatically extract Name, Amount, Date, and ID using OCR. Free, fast, and accurate.">
+    <meta name="description"
+        content="Upload invoices, forms, and receipts. Automatically extract Name, Amount, Date, and ID using OCR. Free, fast, and accurate.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
 
     <!-- ════════════════════════════════════════════════════════
@@ -19,8 +22,10 @@
         <div class="ppt-header">
             <h2>🎓 Project Presentation</h2>
             <div class="ppt-controls-top">
-                <button class="ppt-btn-icon" id="toggleFullscreen" title="Toggle Fullscreen" aria-label="Toggle fullscreen">⛶</button>
-                <button class="ppt-btn-icon" id="minimizePpt" title="Minimize Presentation" aria-label="Minimize presentation">−</button>
+                <button class="ppt-btn-icon" id="toggleFullscreen" title="Toggle Fullscreen"
+                    aria-label="Toggle fullscreen">⛶</button>
+                <button class="ppt-btn-icon" id="minimizePpt" title="Minimize Presentation"
+                    aria-label="Minimize presentation">−</button>
             </div>
         </div>
 
@@ -30,13 +35,13 @@
                 <!-- Slide 1: Title -->
                 <div class="ppt-slide">
                     <span class="slide-icon">📄</span>
-                    <div class="slide-subtitle">Final Year Project Presentation</div>
                     <div class="slide-title">Automated Document<br>Processing Pipeline</div>
                     <div class="slide-body">
-                        An intelligent OCR-powered system that extracts structured data<br>from invoices, forms &amp; receipts automatically.
+                        An intelligent OCR-powered system that extracts structured data<br>from invoices, forms &amp;
+                        receipts automatically.
                     </div>
                     <div class="dev-card" style="margin-top:24px">
-                        <div class="dev-name">V. Chaitanya</div>
+                        <div class="dev-name">V Chaitanya Sai</div>
                         <div class="dev-id">22331A4764</div>
                         <div class="dev-dept">CIC — MVGR College of Engineering</div>
                     </div>
@@ -48,7 +53,7 @@
                     <div class="slide-subtitle">The Challenge</div>
                     <div class="slide-title">Problem Statement</div>
                     <div class="slide-body">
-                        Organizations process <strong>thousands</strong> of documents daily — invoices, receipts, forms. 
+                        Organizations process <strong>thousands</strong> of documents daily — invoices, receipts, forms.
                         Manual data entry is <strong>slow, error-prone, and expensive</strong>.<br><br>
                         ⏱ <strong>High processing time</strong> — manual extraction takes 2–5 min per document<br>
                         ❌ <strong>Human errors</strong> — misread values, typos, skipped fields<br>
@@ -63,7 +68,7 @@
                     <div class="slide-subtitle">Our Approach</div>
                     <div class="slide-title">Proposed Solution</div>
                     <div class="slide-body">
-                        An <strong>end-to-end automated pipeline</strong> that converts any document (PDF or image) 
+                        An <strong>end-to-end automated pipeline</strong> that converts any document (PDF or image)
                         into <strong>structured JSON</strong> using OCR and intelligent parsing.<br><br>
                         ✅ Upload any document — PDF, JPG, PNG<br>
                         ✅ Automatic text extraction via <strong>Tesseract OCR</strong><br>
@@ -164,7 +169,8 @@
                         Upload any invoice, receipt, or form and watch the system<br>
                         extract <strong>Name, Amount, Date, and Invoice ID</strong> automatically.
                     </div>
-                    <button class="btn btn-primary" style="margin-top:24px" onclick="document.getElementById('uploadArea').scrollIntoView({behavior:'smooth'}); closePpt();">
+                    <button class="btn btn-primary" style="margin-top:24px"
+                        onclick="document.getElementById('uploadArea').scrollIntoView({behavior:'smooth'}); closePpt();">
                         ↓ Try the Demo
                     </button>
                 </div>
@@ -175,7 +181,7 @@
                     <div class="slide-subtitle">Developed By</div>
                     <div class="slide-title">Project Developer</div>
                     <div class="dev-card">
-                        <div class="dev-name">V. Chaitanya</div>
+                        <div class="dev-name">V Chaitanya Sai</div>
                         <div class="dev-id">22331A4764</div>
                         <div class="dev-dept">CIC — MVGR College of Engineering</div>
                     </div>
@@ -208,7 +214,7 @@
 
         <!-- Developer Credit -->
         <div class="dev-credit">
-            <span>Developed by V. Chaitanya</span>
+            <span>Developed by V Chaitanya Sai</span>
             <span class="sep">|</span>
             <span>22331A4764</span>
             <span class="sep">|</span>
@@ -268,10 +274,11 @@
 
         <div class="footer">
             Powered by Tesseract OCR &bull; Flask &bull; Open Source
-            <div class="footer-dev">Built by V. Chaitanya — 22331A4764 — CIC, MVGR College of Engineering</div>
+            <div class="footer-dev">Built by V Chaitanya Sai — 22331A4764 — CIC, MVGR College of Engineering</div>
         </div>
     </div>
 
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
+
 </html>
