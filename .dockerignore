@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+Tesseract-OCR/
+poppler/
+uploads/
+screenshots/
+*.md
+.gitignore
