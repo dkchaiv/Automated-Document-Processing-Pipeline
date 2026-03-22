@@ -36,15 +36,22 @@ OUTPUT: { "status": "success", "data": { ... }, "validation": { ... } }
 
 ---
 
-## 🚀 Live Demo
+## 🌐 Live Demo
 
-> **Deployed URL:** `https://automated-document-processing-pipeline.onrender.com`
+👉 **[Try it Live](https://automated-document-processing-pipeline.onrender.com)**
+
+Upload any invoice, receipt, or form and the system will automatically
+extract Name, Amount, Date, and Invoice ID in seconds.
+
+## Testyourself 
+![Demo Screenshot](./screenshots/test.jpeg)
 
 ---
 ## Inputs
 ![Demo Screenshot](./screenshots/rdme2.png)
 ## Outputs
 ![Demo Screenshot](./screenshots/rdme3.png)
+
 
 ## 🏗️ Complete System Architecture
  
