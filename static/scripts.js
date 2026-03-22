@@ -128,6 +128,20 @@
 
             try {
                 const res = await fetch('/upload', { method: 'POST', body: formData });
+
+                // Check if the response is actually JSON before parsing
+                const contentType = res.headers.get('content-type') || '';
+                if (!contentType.includes('application/json')) {
+                    // Server (or Render proxy) returned HTML instead of JSON
+                    throw new Error(
+                        res.status === 502 || res.status === 503
+                            ? 'Server is waking up — please wait 30 seconds and try again.'
+                            : res.status === 413
+                            ? 'File is too large. Maximum size is 10 MB.'
+                            : `Server returned an unexpected response (HTTP ${res.status}). Please try again.`
+                    );
+                }
+
                 const data = await res.json();
                 if (!res.ok) throw new Error(data.error || 'Processing failed');
                 displayResults(data);
