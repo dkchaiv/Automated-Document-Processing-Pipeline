@@ -3,7 +3,7 @@ services:
     name: document-pipeline
     env: python
     buildCommand: |
-      apt-get update && apt-get install -y tesseract-ocr poppler-utils
+      apt-get update && apt-get install -y tesseract-ocr tesseract-ocr-eng poppler-utils
       pip install -r requirements.txt
     startCommand: gunicorn app:app --workers 2 --bind 0.0.0.0:$PORT
     envVars:

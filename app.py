@@ -38,10 +38,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')
 POPPLER_PATH = os.path.join(BASE_DIR, 'poppler', 'Library', 'bin')
 
-# Point pytesseract to the bundled executable
+# Point pytesseract to the bundled executable (Windows local dev)
 TESSERACT_PATH = os.path.join(BASE_DIR, 'Tesseract-OCR', 'tesseract.exe')
 if OCR_AVAILABLE and os.path.isfile(TESSERACT_PATH):
     pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
+# Fallback: Linux path used on Render deployment
+elif OCR_AVAILABLE and os.path.isfile('/usr/bin/tesseract'):
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 ALLOWED_EXTENSIONS = {'pdf', 'jpg', 'jpeg', 'png'}
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
